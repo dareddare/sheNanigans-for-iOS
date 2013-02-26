@@ -10,6 +10,7 @@
 
 @interface NanigansUtil : NSObject
 
-+ (NSString*)urlForEvent:(NSString*)event andParameters:(NSDictionary*)parameters;
+// Method tat returns url for given event
++ (NSString*)urlForEventType:(NSString*)eventType eventName:(NSString*)eventName andParameters:(NSDictionary*)parameters;
 
 @end

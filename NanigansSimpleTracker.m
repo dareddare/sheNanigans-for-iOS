@@ -32,10 +32,11 @@
 
 /**
  * Creates event url and tracks the event in background.
- * @param event Event that should be tracked.
- * @param parameters Parameters that should be added to the event
+ * @param eventType Type of the event that should be tracked.
+ * @param eventName Name of the event that should be tracked.
+ * @param parameters Parameters that should be added to the event.
  */
-- (void)trackEvent:(NSString*)event withParameters:(NSDictionary*)parameters {
+- (void)trackEventOfType:(NSString*)eventType eventName:(NSString*)eventName withParameters:(NSDictionary*)parameters {
 	// Create parameters for the event. The parameters are created as union of given parameters and default parameters that are sent with every event
 	NSDictionary* allParameters = nil;
 	if (self.defaultParameters == nil) {
@@ -55,7 +56,7 @@
 	}
 		
 	// Create event url
-	NSString* eventUrl = [NanigansUtil urlForEvent:event andParameters:allParameters];
+	NSString* eventUrl = [NanigansUtil urlForEventType:eventType eventName:eventName andParameters:allParameters];
 	
 	// Track the event in background
 	if (eventUrl != nil) {

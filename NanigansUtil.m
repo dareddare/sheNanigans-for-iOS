@@ -12,12 +12,20 @@
 
 /**
  * Creates url for the event.
- * @param event Event for which url should be created.
- * @param parameters Parameters that should be added to the event
- * @param 
+ * @param eventType Type of the event for which url should be created.
+ * @param eventName Name of the event for which url should be created.
+ * @param parameters Parameters that should be added to the event.
  */
-+ (NSString*)urlForEvent:(NSString*)event andParameters:(NSDictionary*)parameters {
-	return @"http://192.168.69.237:8888/nantest.php?darko=MOBILE&nesto=MOBILE&attempt=1";
++ (NSString*)urlForEventType:(NSString*)eventType eventName:(NSString*)eventName andParameters:(NSDictionary*)parameters {
+	if ((eventType == nil) || ([eventType length] == 0)) {
+		return nil;
+	}
+	if ((eventName == nil) || ([eventName length] == 0)) {
+		return nil;
+	}
+	
+#warning implement this
+	return [NSString stringWithFormat:@"http://192.168.69.237:8888/nantest.php?eventType=%@&eventName=%@", eventType, eventName];
 }
 
 @end

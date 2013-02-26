@@ -13,7 +13,7 @@
 @required
 
 // Method that is called when event should be tracked
-- (void)trackEvent:(NSString*)event withParameters:(NSDictionary*)parameters;
+- (void)trackEventOfType:(NSString*)eventType eventName:(NSString*)eventName withParameters:(NSDictionary*)parameters;
 
 @optional
 
