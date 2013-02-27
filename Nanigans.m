@@ -82,7 +82,9 @@
  */
 - (NSObject<NanigansTrackerProtocol>*)activeTracker {
 	// Check if valid tracker has been set before
-	NSAssert([self trackerIsValid], @"Tracker should be set.");
+	if (![self trackerIsValid]) {
+		return nil;
+	}
 	
 	// Get the tracker
 	NSObject<NanigansTrackerProtocol>* tracker = nil;
