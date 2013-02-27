@@ -27,6 +27,8 @@ static NSSet* fbAttributionIdNeededPixels = nil;
  */
 + (NSString*)urlForEventType:(NSString*)eventType eventName:(NSString*)eventName andParameters:(NSDictionary*)parameters {
 	// Check if event descriptors are valid
+	
+	
 	if ((eventType == nil) || ([eventType length] == 0)) {
 		return nil;
 	}
@@ -47,7 +49,6 @@ static NSSet* fbAttributionIdNeededPixels = nil;
 	allEventParameters[@"name"] = eventName;
 	
 	// Add attribution id from pasteboard
-#warning check if user should have attribution id
 	NSString* attributionId = nil;
 	if ([self attributionIdNeededForThePixelType:eventType]) {
 		// Get pasteboard
@@ -75,7 +76,7 @@ static NSSet* fbAttributionIdNeededPixels = nil;
 		allEventParameters[@"unique"] = uniqueUserIdString;
 	}
 		
-	// Create get parameters
+	// Create get parameters string
 	NSMutableString* getParameters = [@"" mutableCopy];
 	for (NSInteger i = 0; i < [[allEventParameters allKeys] count]; i++) {
 		NSString* key = [allEventParameters allKeys][i];
@@ -91,7 +92,7 @@ static NSSet* fbAttributionIdNeededPixels = nil;
 	}
 	
 	// Create url using get prameters and script url
-	NSMutableString* scriptUrl = [@"http://192.168.69.237:8888/nantest.php" mutableCopy];
+	NSMutableString* scriptUrl = [NANIGANS_SCRIPT_URL mutableCopy];
 	if ([getParameters length] > 0) {
 		[scriptUrl appendString:[NSString stringWithFormat:@"?%@", getParameters]];
 	}
