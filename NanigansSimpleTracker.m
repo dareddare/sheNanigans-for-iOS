@@ -64,6 +64,14 @@
 	}
 }
 
+/**
+ * Sets parameters that should be sent with every event.
+ * @param parameters Parameters that should be sent with every event.
+ */
+- (void)setEventDefaultParameters:(NSDictionary*)parameters {
+	self.defaultParameters = parameters;
+}
+
 #pragma mark - Helper methods
 
 /**
