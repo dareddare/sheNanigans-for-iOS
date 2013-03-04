@@ -17,6 +17,9 @@
 // Collection holding all the trackers
 @property (nonatomic, retain) NSMutableDictionary* trackers;
 
+// Instance method that returns currently active tracker
+- (NSObject<NanigansTrackerProtocol>*)activeTracker;
+
 // Checks if tracker is valid.
 - (BOOL)trackerIsValid;
 

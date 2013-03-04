@@ -28,7 +28,4 @@ typedef enum {
 // Property that says the tracker type
 @property (nonatomic, assign) TrackerType trackerType;
 
-// Instance method that returns currently active tracker
-- (NSObject<NanigansTrackerProtocol>*)activeTracker;
-
 @end

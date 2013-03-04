@@ -27,8 +27,6 @@ static NSSet* fbAttributionIdNeededPixels = nil;
  */
 + (NSString*)urlForEventType:(NSString*)eventType eventName:(NSString*)eventName andParameters:(NSDictionary*)parameters {
 	// Check if event descriptors are valid
-	
-	
 	if ((eventType == nil) || ([eventType length] == 0)) {
 		return nil;
 	}
