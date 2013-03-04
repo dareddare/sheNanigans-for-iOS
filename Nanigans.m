@@ -145,7 +145,7 @@ static Nanigans* trackers = nil;
 }
 
 + (id)allocWithZone:(NSZone*)zone {
-	return [[self shenanigans] retain];
+	return [[self trackers] retain];
 }
 
 - (id)copyWithZone:(NSZone *)zone {
